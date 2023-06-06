@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Form</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+  <section class="header">
+    <a href="Home.html" class="logo">Wisata Terus</a>
+    <nav class="navbar">
+      <ul>
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="package.html">Package</a></li>
+      </ul>
+    </nav>
+
+    <div id="menu-btn" class="fas fa-bars"></div>
+  </section>
+  <div class="heading" style="background:url(images/gambar3.jpg) no-repeat">
+    <h1>Booking</h1>
+  </div>
+<section class="home-packages">
+  <form id="myForm">
+    <label for="name">Nama:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="tujuan">Tujuan:</label>
+    <input type="text" id="tujuan" name="tujuan" required>
+
+    <label for="asal">Asal:</label>
+    <input type="text" id="asal" name="asal" required>
+
+    <label for="hari">Hari:</label>
+    <select id="hari" name="hari" required>
+      <option value="">Pilih Hari</option>
+      <option value="Senin">Senin</option>
+      <option value="Selasa">Selasa</option>
+      <option value="Rabu">Rabu</option>
+      <option value="Kamis">Kamis</option>
+      <option value="Jumat">Jumat</option>
+      <option value="Sabtu">Sabtu</option>
+      <option value="Minggu">Minggu</option>
+    </select>
+
+    <label for="tanggal">Tanggal:</label>
+    <input type="date" id="tanggal" name="tanggal" required>
+
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <h2>Data yang Diisi:</h2>
+  <table id="dataTable">
+    <thead>
+      <tr>
+        <th>Nama</th>
+        <th>Tujuan</th>
+        <th>Hari</th>
+        <th>Asal</th>
+        <th>Tanggal</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</section>
+
+<script>
+  // Menangani pengiriman formulir
+  var form = document.getElementById("myForm");
+  form.addEventListener("submit", function (event) {
+    event.preventDefault(); // Mencegah pengiriman formulir secara default
+
+    // Mengambil nilai input
+    var name = document.getElementById("name").value;
+    var tujuan = document.getElementById("tujuan").value;
+    var hari = document.getElementById("hari").value;
+    var asal = document.getElementById("asal").value;
+    var tanggal = document.getElementById("tanggal").value;
+
+    // Membuat baris baru dalam tabel
+    var table = document.getElementById("dataTable");
+    var row = table.insertRow();
+    var cell1 = row.insertCell();
+    var cell2 = row.insertCell();
+    var cell3 = row.insertCell();
+    var cell4 = row.insertCell();
+    var cell5 = row.insertCell();
+
+    // Menambahkan nilai input ke dalam sel-sel tabel
+    cell1.innerHTML = name;
+    cell2.innerHTML = tujuan;
+    cell3.innerHTML = hari;
+    cell4.innerHTML = asal;
+    cell5.innerHTML = tanggal;
+
+    // Mereset nilai input
+    form.reset();
+  });
+</script>
+  
+  <section class="footer">
+    <div class="box-container">
+      <div class="box">
+        <h3>quick links</h3>
+        <a href="Home.html"> <i class="fas fa-angle-right"></i>Home</a>
+        <a href="about.html"> <i class="fas fa-angle-right"></i>About</a>
+        <a href="package.html"> <i class="fas fa-angle-right"></i>Package</a>
+      </div>
+      <div class="box">
+        <h3>extra links</h3>
+        <a href="#"> <i class="fas fa-angle-right"></i> ask questions</a>
+        <a href="#"> <i class="fas fa-angle-right"></i> about us</a>
+        <a href="#"> <i class="fas fa-angle-right"></i> privacy policy</a>
+        <a href="#"> <i class="fas fa-angle-right"></i> term of use</a>
+      </div>
+      <div class="box">
+        <h3>contact info</h3>
+        <a href="#"> <i class="fas fa-phone"></i> +62 896-7752-9624 </a>
+        <a href="#"> <i class="fas fa-phone"></i> +62 812-1850-4433 </a>
+        <a href="#"> <i class="fas fa-envelope"></i> wisataterus@gmail.com </a>
+        <a href="#"> <i class="fas fa-map"></i> wisataterus@gmail.com </a>
+      </div>
+      <div class="box">
+        <h3>Follow us</h3>
+        <a href="#"> <i class="fab fa-facebook"></i> Facebook</a>
+        <a href="#"> <i class="fab fa-twitter"></i> Twitter</a>
+        <a href="#"> <i class="fab fa-instagram"></i> Instagram</a>
+        <a href="#"> <i class="fab fa-linkedin"></i> Linkedin</a>
+      </div>
+    </div>
+    <div class="credit"> created by <span>Wisata Terus</span> | all rights reserved! </div>
+  </section>
+  <button onclick="scrollToTop()" id="myBtn" title="Go to top">TOP</button>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
